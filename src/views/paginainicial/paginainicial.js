@@ -19,7 +19,7 @@ class PaginaInicial extends React.Component{
         e.preventDefault()
         console.log('yo')
         
-        axios.get('http://martinho.dynip.sapo.pt:1024/').then(res => {
+        axios.get(process.env.endereco + process.env.portaAPI).then(res => {
             console.log(res);
         })
         .catch(err =>{ 

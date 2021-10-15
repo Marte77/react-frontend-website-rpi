@@ -21,7 +21,7 @@ class PaginaLogin extends React.Component{
     handleLogin = (e) =>{
         e.preventDefault()
 
-        axios.post('http://martinho.dynip.sapo.pt:1024/utilizadores/login',{
+        axios.post(process.env.endereco + process.env.portaAPI + '/utilizadores/login',{
             username:this.state.username,
             password:this.state.password,
         }).then(res=>{

@@ -39,7 +39,7 @@ class PaginaListaImagens extends React.Component{
             "x-access-token": localStorage.getItem("jwt")
         }
         let reqOptions = {
-            url: "http://martinho.dynip.sapo.pt:1024/imagens/"+ nomeimagem,
+            url: process.env.endereco + process.env.portaAPI + "/imagens/"+ nomeimagem,
             method: "GET",
             headers: headersList,
             responseType: 'arraybuffer'
@@ -107,7 +107,7 @@ class PaginaListaImagens extends React.Component{
     }
 
     componentDidMount(){
-        let url = "http://martinho.dynip.sapo.pt:1024/imagens/lista_imagens/" + localStorage.getItem("username")
+        let url = process.env.endereco + process.env.portaAPI + "/imagens/lista_imagens/" + localStorage.getItem("username")
         axios.get(url).then(res=>{
             //console.log(res)
             let fichs = res.data.ficheiros

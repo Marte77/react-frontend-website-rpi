@@ -76,7 +76,7 @@ class PaginaUpload extends React.Component{
             img.append('images',imagem)
         //img.append('image',this.state.imagens[0])
         let reqOptions = {
-            url: "http://martinho.dynip.sapo.pt:1024/imagens/uploadBulkImg",
+            url: process.env.endereco + process.env.portaAPI + "/imagens/uploadBulkImg",
             method: "POST",
             headers: {"x-access-token":localStorage.getItem("jwt")},
             data: img,
