@@ -1,0 +1,6 @@
+//forever start -c "npm start build"
+
+//serve -s build
+
+npm run build
+pm2 serve -s build PORT=8080
